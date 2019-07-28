@@ -35,6 +35,22 @@ class ViewController: UIViewController {
         
         superView?.addSubview(button)
         superView?.addSubview(label)
+        
+        //setting the constraints now
+        
+        //instance needs to be declare in order to set the constraints
+        var myConstraint = NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: superView, attribute: .centerY, multiplier: 1.0, constant: 0) //this for horizontal
+        superView?.addConstraint(myConstraint) //constraint needs to be add to the view
+        
+        myConstraint = NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: superView, attribute: .centerX, multiplier: 1.0, constant: 0) //this is for vertical positioning
+        superView?.addConstraint(myConstraint)
+        
+        //for button but it will sit aside of label
+        myConstraint = NSLayoutConstraint(item: button, attribute: .trailing, relatedBy: .equal, toItem: label, attribute: .leading, multiplier: 1.0, constant: -10)
+        superView?.addConstraint(myConstraint)
+        
+        myConstraint = NSLayoutConstraint(item: button, attribute: .lastBaseline, relatedBy: .equal, toItem: label, attribute: .lastBaseline, multiplier: 1.0, constant: 0)
+        superView?.addConstraint(myConstraint)
     }
 
 }
