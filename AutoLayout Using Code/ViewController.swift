@@ -51,6 +51,9 @@ class ViewController: UIViewController {
         
         myConstraint = NSLayoutConstraint(item: button, attribute: .lastBaseline, relatedBy: .equal, toItem: label, attribute: .lastBaseline, multiplier: 1.0, constant: 0)
         superView?.addConstraint(myConstraint)
+        
+        //if you need to remove any constraints the following line will be used.
+        //<anyview>?.removeConstraint(anyConstrant)
     }
 
 }
